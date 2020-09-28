@@ -12,7 +12,7 @@ function getProductNode (product, id) {
 		$('<img src="'+product.img+'" class="card-img-top">'),
 		$('<div class="card-body"></div>').append(
 			$('<h5 class="card-title"></h5>').text(product.name),
-			$('<h5 class="card-title"></h5>').text("$"+product.value),
+			$('<h5 class="card-title"></h5>').text("U$D "+product.value),
 			$('<btn class="btn btn-primary" onclick="addProductToCart('+id+')"/>')
 				.text("Buy")))
 }

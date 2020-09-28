@@ -11,7 +11,7 @@ function getInventoryNode(product, index) {
 			$('<div class="col-xs-2"></div>').append(
 				$('<img src="'+product.img+'" class="img-thumbnail"></img>')),
 			$('<div class="col"></div>').text(product.name),
-			$('<div class="col-3 d-md-none d-lg-block"></div>').text('$'+product.value),
+			$('<div class="col-3 d-md-none d-lg-block"></div>').text('U$D'+product.value),
 			$('<div class="col text-center"></div>').append(
 				$('<button class="btn btn-primary" data-toggle="collapse" data-target="#collapseInventory'+index+'" aria-expanded="false" aria-controls="collapseInventory'+index+'"></button>').append(
 					$('<i class="fas fa-edit"></i>')),
@@ -28,7 +28,7 @@ function getEditForm (product, index) {
 			$('<input id="productName'+index+'" type="text" class="form-control" placeholder="'+product.name+'"/>')),
 		$('<div class="form-group"></div>').append(
 			$('<label>Value</label>'),
-			$('<input id="productValue'+index+'" type="number" class="form-control" placeholder="$'+product.value+'"/>')),
+			$('<input id="productValue'+index+'" type="number" class="form-control" placeholder="U$D'+product.value+'"/>')),
 		$('<div class="form-group"></div>').append(
 			$('<label>Image url</label>'),
 			$('<input id="productImg'+index+'" type="text" class="form-control" placeholder="'+product.img+'"/>')),
@@ -96,33 +96,33 @@ let getProduct = id => {return _inventory[id]}
 
 // list of products in the store
 let _inventory = [{
-  'name': 'Hoja de cuadernillo',
-  'img': 'https://cdn.shopify.com/s/files/1/1045/5226/products/hoja_de_cuadernillo_grande.gif?v=1498574172',
-  'value': 50,
+  'name': 'Jordan Retro 1 High x Travis Scott',
+  'img': 'https://c.static-nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/qhkqa20avfhumxwky4rq/air-jordan-1-high-travis-scott-release-date.jpg',
+  'value': 1719,
+  'stock': 2,
+},{
+  'name': 'Yeezy boost 350 v2 Zebra',
+  'img': 'https://s3.amazonaws.com/charitycdn/cache/resizedcrop-063849ed9fb46695b3d9a00c469467d4-800x800.jpg',
+  'value': 328,
   'stock': 10,
 },{
-  'name': 'Bolígrafo',
-  'img': 'https://http2.mlstatic.com/lapiz-pasta-bic-D_NQ_NP_20527-MLC20193537461_112014-F.jpg',
-  'value': 500,
+  'name': 'Nike Dunk High Michigan',
+  'img': 'https://cdn.fs.grailed.com/api/file/sskpA8NzRaiv3k4remk2',
+  'value': 233,
   'stock': 10,
 },{
-  'name': 'Corchetera',
-  'img': 'https://isofit.cl/wp-content/uploads/2017/01/11281-K-Corchetera-Met%C3%A1lica-CM-50.jpg',
-  'value': 3000,
+  'name': 'Travis Scott x McDonalds Crew T-Shirt Red',
+  'img': 'https://stockx.imgix.net/products/streetwear/Travis-Scott-x-McDonalds-Crew-T-Shirt-Red.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1599683694&w=1000',
+  'value': 40,
   'stock': 10,
 },{
-  'name': 'Colafria',
-  'img': 'https://officemax.vteximg.com.br/arquivos/ids/170272-1000-1000/92616_1.jpg?v=636246906670000000',
-  'value': 1500,
-  'stock': 10,
+  'name': 'Jordan 1 Retro High Off-White Chicago',
+  'img': 'https://e3a2x2w3.stackpathcdn.com/wp-content/uploads/2020/03/aa3834_101-2.jpg',
+  'value': 3864,
+  'stock': 1,
 },{
-  'name': 'Impresion a color',
-  'img': 'https://imprentalascondes.cl/wp-content/uploads/2016/09/IMPRESION-DIGITAL-A-COLOR-1.jpg',
-  'value': 50,
-  'stock': 10,
-},{
-  'name': 'Impresion en blanco y negro',
-  'img': 'https://imprentalascondes.cl/wp-content/uploads/2020/02/COPIAS-EN-BLANCO-Y-NEGRO.jpg',
-  'value': 10,
+  'name': 'Louis Vuitton 1.1 Millionaires Sunglasses Black',
+  'img': 'https://stockx.imgix.net/products/handbags/Louis-Vuitton-11-Millionaires-Sunglasses-Black.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&dpr=2&trim=color&trimcolor=ffffff&updated_at=1584023056',
+  'value': 990,
   'stock': 10,
 }]
