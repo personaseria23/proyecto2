@@ -7,6 +7,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="next" type="text/html" href="registro.html">
 		<script src="https://kit.fontawesome.com/2d81658822.js" crossorigin="anonymous"></script>
 		<title>CA$H & TR4DEZ</title>
 	</head>
@@ -14,16 +15,11 @@
 		<div id="login" class="container text-center">
 			<form class="form-signin">
 				<h1>CA$H & TR4DEZ</h1>
-				<h1 class="h3 mb-3 font-weight-normal">EL litcharly LA CHUPA x 2 SUELDOS MINIMOS</h1>
+				<h3>Inicie sesión o Regístrese para continuar</h3>
 				<label for="inputUser" class="sr-only">user</label>
-				<input type="email" id="inputUser" class="form-control" autofocus="" placeholder="Username" >
+				<input type="text" id="inputUser" class="form-control" autofocus="" placeholder="Username" >
 				<label for="inputPassword" class="sr-only">Password</label>
 				<input type="password" id="inputPassword" class="form-control" placeholder="Password">
-				<div class="checkbox mb-3">
-					<label>
-						<input type="checkbox" value="remember-me"> Recordarme
-					</label>
-				</div>
 				<button onclick="evaluateLogin()" class="btn btn-lg btn-primary btn-block" type="button">Iniciar Sesión</button>
 				<button onclick="register()" class="btn btn-lg btn-secondary btn-block" type="button">Registrarse</button>
 			</form>
@@ -155,6 +151,23 @@
 			  </div>
 			</div>
 			<div id="products" class="row"></div>
+		</div>
+		<div id="register" class="container">
+			<div class="form_top">
+                <h2>Formulario <span>Registro</span></h2>
+            </div>
+            <form class="form_reg" action="">
+                <input class="input" type="text" placeholder="Nombre de Usuario" required autofocus>
+                <input class="input" type="password" placeholder="Contraseña" required autofocus>
+                <input class="input" type="text" placeholder="Nombre" required >
+                <input class="input" type="text" placeholder="Apellidos" required>
+                <input class="input" type="text" placeholder="Email" required>
+                <input class="input" type="text" placeholder="Dirección" required>
+                <div class="btn_form">
+                    <input class="btn_reset" type="reset" value="Limpiar">
+                    <input class="btn_submit" type="submit" value="Registrar">
+                </div>
+            </form>
 		</div>
 		<!-- Modals -->
 
