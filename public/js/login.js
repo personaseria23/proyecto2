@@ -34,6 +34,7 @@ function hideAllViews () {
 	$('#login').css('display', 'none')
 	$('#admin').css('display', 'none')
 	$('#user').css('display', 'none')
+	$('#register').css('display', 'none')
 }
 
 // evaluate login for redirect

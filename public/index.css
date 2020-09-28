@@ -27,6 +27,7 @@ h3 {
 #login {
   padding-top: 40px;
   padding-bottom: 40px;
+  
 }
 
 .form-signin {
@@ -90,4 +91,71 @@ h3 {
 }
 .cartNodeCount {
   width: 30px;
+}
+
+.form_top {
+	width: 100%;
+	text-align: center;
+	padding: 2rem 0 1rem;
+	border-top: solid .4rem #d8d64d;
+	margin-bottom: 1rem;
+	background-color: #31B1E5;
+	align-items: center;
+}
+
+.form_top h2 {
+	font-weight: bold;
+	color: #566cec;
+	font-size: 18px;
+}
+
+h2 span {
+	color: #e2bb84;
+}
+
+.form_reg {
+	padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.btn_form {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 1rem;
+}
+
+.inputUser, .inputPassword, .inputNombre, .inputApellidos, .inputEmail, .inputDir,  .btn_submit, .btn_reset, .btn_back{
+	background-color: #EFEFEF;
+	padding: .5rem;
+	margin: .5rem 0;
+	border: none;
+	border-bottom: solid #C8C8C8 .2rem;
+  transition: all .5s;
+  width: 50%;
+  
+}
+
+.btn_submit, .btn_reset{
+	width: 40%;
+	border-bottom: none;
+	background-color: #31B1E5;
+	color: white;
+}
+.btn_back{
+  background-color: #CAC8C8;
+  width: 40%;
+}
+
+.btn_reset {
+	background-color: #EDA135;
+}
+
+.btn_submit:hover {
+	background-color: #4C9ED9;
+}
+
+.btn_reset:hover{
+	background-color: #FA9535;
 }
