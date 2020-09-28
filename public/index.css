@@ -1,12 +1,15 @@
 html,
 body {
   height: 100%;
-  background-color: #c75122;
+  background-color: #9AD1ED;
 }
 
 body {
   display: flex;
   align-items: center;
+}
+h3 {
+ font-size: small;
 }
 
 #admin {
@@ -15,6 +18,10 @@ body {
 
 #user {
 	display: none;
+}
+
+#register {
+ display: none;
 }
 
 #login {

@@ -74,6 +74,7 @@ function checkPassword (user, pass) {
 // register an account
 function register () {
 	// check if user exist
+	goTo('register')
 	let user = $('#inputUser').val()
 	if (user == "") {
 		$('#userExistModal').modal('show')
@@ -92,4 +93,5 @@ function register () {
 	})
 	clearAll()
 	$('#registerModal').modal('show')
+	
 }
