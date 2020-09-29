@@ -1,13 +1,13 @@
-// accounts array
+// arreglo cuentas
 let _accounts = [
 	{ user: "admin", pass: "", level: 1 },
 	{ user: "user", pass: "", level: 2 },
 ] 
 
-// current logged user email
+// correo electrónico del usuario registrado actual
 let userEmail = ""
 
-// clear all nodes inserted by other functions
+// limpiar todos los nodos insertados por otras funciones
 function clearAll () {
 	_cart = []
 	$('#cart').empty()
@@ -18,35 +18,35 @@ function clearAll () {
 	$('#inputPassword').val("")
 }
 
-// Go to specific view (login, user, admin)
+// ir a una vista especifica (login, user, admin)
 function goTo (name) {
 	hideAllViews()
-	// reveal only the selected view
+	// revelar solo la vista seleccionada
 	$('#'+name).css('display', 'block')
 }
 
-// hide all views xd
+// esconder todas las vistas
 function hideAllViews () {
-	// styles of  login
+	// estilos de login
 	$('body').css('display', 'block')
 	$('body').css('align-items', 'left')
-	// hide all views
+	// esconder todas las vistas
 	$('#login').css('display', 'none')
 	$('#admin').css('display', 'none')
 	$('#user').css('display', 'none')
 	$('#register').css('display', 'none')
 }
 
-// evaluate login for redirect
+// evaluar login para redireccionar
 function evaluateLogin () {
 	userEmail = $('#inputUser').val()
-	// check login credentials
+	// chequear credenciales login 
 	let level = checkPassword(userEmail, $('#inputPassword').val())
 	if (level < 1) {
 		$('#accountModal').modal('show')
 		return
 	}
-	// redirect to correct view on successful login
+	// redirigir a la vista correcta al iniciar sesión correctamente
 	clearAll()
 	switch (level) {
 		case 1:
@@ -61,7 +61,7 @@ function evaluateLogin () {
 	}
 }
 
-// check password and return access level of the account
+// comprobar la contraseña y devolver al nivel de acceso de la cuenta
 function checkPassword (user, pass) {
 	for (i=0; i<_accounts.length; i++)
 		if (_accounts[i].user === user)
@@ -72,9 +72,9 @@ function checkPassword (user, pass) {
 	return 0
 }	
 
-// register an account
+// registrar una cuenta
 function register () {
-	// check if user exist
+	// chequear si el usuario existe
 	goTo('register')
 	let user = $('#inputUser').val()
 	if (user == "") {
@@ -86,7 +86,7 @@ function register () {
 			$('#userExistModal').modal('show')
 			return
 		}
-	// register account
+	// registrar cuenta
 	_accounts.push({
 		user: user,
 		pass: $('#inputPassword').val(),
