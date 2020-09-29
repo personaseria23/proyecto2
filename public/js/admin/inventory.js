@@ -1,10 +1,10 @@
-// insert a inventory node for every product
+// insertar nodo de inventario para cada producto
 function fillInventory() {
 	_inventory.forEach((product, index) => 
 		$("#inventory").append(getInventoryNode(product, index)))
 }
 
-// generate an inventory node
+// generar un nodo inventario
 function getInventoryNode(product, index) {
   return $('<li class="list-group-item list-group-item-action"></li>').append(
 		$('<div class="row"></div>').append(
@@ -20,7 +20,7 @@ function getInventoryNode(product, index) {
 		$('<div class="collapse" id="collapseInventory'+index+'"></div>').append(getEditForm(product, index)))
 }
 
-// generate an edition form for a product
+// generar un formulario de edición para un producto
 function getEditForm (product, index) {
 	return $('<div class="mt-2 inventoryForm"></div>').append(
 		$('<div class="form-group"></div>').append(
@@ -39,7 +39,7 @@ function getEditForm (product, index) {
 			$('<i class="fas fa-save"></i>')))
 }
 
-// update product info from edition form
+// actualizar la informacion de producto desde el formulario de edición
 function setProduct (id) {
 	if (id === undefined) {
 		id = _inventory.length
@@ -61,7 +61,7 @@ function setProduct (id) {
 	reloadInventory()
 }
 
-// import products from csv file
+// importar productos desde el archivo csv
 function importFromCsv() {
 	$("#attachment").click()
     $("#attachment").one('change', () =>
@@ -79,22 +79,22 @@ function importFromCsv() {
 		}))
 }
 
-// remove a product form the inventory
+// remover un producto del inventario
 function removeFromInventory (node, id) {
 	_inventory.splice(id, 1)
 	reloadInventory()
 }
 
-// reload inventory nodes
+// recargar nodo inventario 
 let reloadInventory = () => $("#inventory").empty() && fillInventory()
 
-// get all products
+// obtener todos los productos
 let getProducts = () => {return _inventory}
 
-// get product by id
+// obtener producto por id
 let getProduct = id => {return _inventory[id]}
 
-// list of products in the store
+// lista de productos en la store
 let _inventory = [{
   'name': 'Jordan Retro 1 High x Travis Scott',
   'img': 'https://c.static-nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/qhkqa20avfhumxwky4rq/air-jordan-1-high-travis-scott-release-date.jpg',
