@@ -18,8 +18,9 @@ var comUser = {
 };
 var objArray = new Array();
 var arrayLargo = objArray.push(admin);
-arrayLargo = objArray.push(comUser);
-arrayLargo = objArray.push(admin);
+agregarUsr(comUser);
+agregarUsr(comUser);
+agregarUsr(admin);
 function mostrarCuentas(arrayAccounts) {
     for (var i = 0; i < objArray.length; i++)
         console.log(objArray[i]); //por consola
@@ -38,4 +39,7 @@ function validarUsuario(usr) {
         else
             return false;
     }
+}
+function agregarUsr(usr) {
+    arrayLargo = objArray.push(usr);
 }

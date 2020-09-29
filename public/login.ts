@@ -30,8 +30,9 @@ let comUser: Usuario = {
 
 let objArray: Array<Usuario> = new Array();
 let arrayLargo: number = objArray.push(admin);
-arrayLargo = objArray.push(comUser);
-arrayLargo = objArray.push(admin);
+agregarUsr(comUser);
+agregarUsr(comUser);
+agregarUsr(admin);
 
 function mostrarCuentas(arrayAccounts:Usuario) {
   for (let i = 0; i < objArray.length;i++)
@@ -51,4 +52,7 @@ function validarUsuario(usr: Usuario) {
       return true;
     else return false;
   }
+}
+function agregarUsr(usr: Usuario) {
+  arrayLargo = objArray.push(usr);
 }
