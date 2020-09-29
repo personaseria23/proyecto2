@@ -1,4 +1,4 @@
-// fill gallery node with product nodes
+// llenar el nodo galeria con nodos
 function fillProductGallery () {
 	getProducts().forEach((product, index) => {
 		$('#products').append(
@@ -6,7 +6,7 @@ function fillProductGallery () {
 				.append(getProductNode(product, index)))})
 }
 
-// get a product node for insert in DOM
+// obtener un nodo producto para insertar en DOM
 function getProductNode (product, id) {
 	return $('<div class="card mb-3"></div>').append(
 		$('<img src="'+product.img+'" class="card-img-top">'),
