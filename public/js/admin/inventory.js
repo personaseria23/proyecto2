@@ -100,20 +100,30 @@ let _inventory = [{
   'img': 'https://c.static-nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/qhkqa20avfhumxwky4rq/air-jordan-1-high-travis-scott-release-date.jpg',
   'value': 1719,
   'stock': 2,
+},{ 
+  'name': 'Jordan 1 Mid Black Hot Punch',
+  'img': 'https://stockx.imgix.net/Air-Jordan-1-Mid-Black-Hot-Punch-W-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1555964916&w=1000',
+  'value': 450,
+  'stock': 10,
 },{
   'name': 'Yeezy boost 350 v2 Zebra',
   'img': 'https://s3.amazonaws.com/charitycdn/cache/resizedcrop-063849ed9fb46695b3d9a00c469467d4-800x800.jpg',
   'value': 328,
   'stock': 10,
 },{
+  'name': 'Nike Air Force 1',
+  'img': 'https://http2.mlstatic.com/zapatilla-nike-air-force-1-mujer-pinkorangeblack-D_NQ_NP_855792-MLC43219171479_082020-F.webp',
+  'value': 386,
+  'stock': 1,
+},{
   'name': 'Nike Dunk High Michigan',
   'img': 'https://cdn.fs.grailed.com/api/file/sskpA8NzRaiv3k4remk2',
   'value': 233,
   'stock': 10,
-},{
-  'name': 'Travis Scott x McDonalds Crew T-Shirt Red',
-  'img': 'https://stockx.imgix.net/products/streetwear/Travis-Scott-x-McDonalds-Crew-T-Shirt-Red.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1599683694&w=1000',
-  'value': 40,
+},{	
+  'name': 'Nike Elastico GT Futbol Sala',
+  'img': 'https://www.futbolemotion.com/imagesarticulos/95375/grandes/zapatilla-nike-nike5-elastico-celeste-blanca-fucsia-1.jpg',
+  'value': 399,
   'stock': 10,
 },{
   'name': 'Jordan 1 Retro High Off-White Chicago',
@@ -121,8 +131,8 @@ let _inventory = [{
   'value': 3864,
   'stock': 1,
 },{
-  'name': 'Louis Vuitton 1.1 Millionaires Sunglasses Black',
-  'img': 'https://stockx.imgix.net/products/handbags/Louis-Vuitton-11-Millionaires-Sunglasses-Black.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&dpr=2&trim=color&trimcolor=ffffff&updated_at=1584023056',
-  'value': 990,
+  'name': 'Jordan 1 Mid Digital Pink',
+  'img': 'https://cdn.discordapp.com/attachments/751572415720587384/759899324623749130/87964135_2563496680531141_7322396013879099392_n.png',
+  'value': 450,
   'stock': 10,
 }]

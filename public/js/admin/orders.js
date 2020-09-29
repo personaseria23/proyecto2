@@ -1,10 +1,10 @@
 let _orders = []
 
-// insert a order node for every order
+// insertar nodo orden para cada pedido
 let fillOrders = () => _orders.forEach((order, index) => 
 		$("#orders").append(getOrderNode(order, index)))
 
-// download attachment from order
+// descargar archivo adjunto del pedido
 function downloadAttachment (index) {
 	let link = document.createElement("a");
 	link.download = "print";
@@ -14,7 +14,7 @@ function downloadAttachment (index) {
  	document.body.removeChild(link);
 }
 
-// generate order node
+// generar nodo de orden
 function getOrderNode (order, index) {
 	return $('<a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseOrder'+index+'" role="button" aria-expanded="false" aria-controls="collapseOrder'+index+'"></a>')
 		.append(
@@ -32,7 +32,7 @@ function getOrderNode (order, index) {
 					$('<i class="fas fa-check"></i>'))))
 }
 
-// generate a list of products
+// generar una lista de productos
 function getOrderList (order) {
 	let products = $('<ul class="list-group list-group-flush"></ul>')
 	order.forEach((product, index) => 
@@ -41,13 +41,13 @@ function getOrderList (order) {
 	return products
 }
 
-// generate a total price display node
+// generar un nodo de visualización de precio total
 function getTotalNode(order){
 	return $('<li class="list-group-item"></li>').append(
 		$('<div class="row"></div>').text('Total: $'+ getOrderTotal(order)))
 }
 
-// calculate the total of a order
+// calcular el total de una orden
 function getOrderTotal(order){
 	totalValue=0;
 	for(let i=1; i<order.length; i++){
@@ -56,7 +56,7 @@ function getOrderTotal(order){
 	return totalValue
 }
 
-// get node for display total
+// nodo para mostrar el total
 function getTotalNode (order) {
 	let totalValue = 0;
 	order.forEach(product => (totalValue += product.count ? product.count * product.value : 0))
@@ -64,7 +64,7 @@ function getTotalNode (order) {
 		$('<div class="row"></div>').text('Total: $'+ totalValue))
 }
 
-// get a product node for insert in a list
+// nodo de producto para insertarlo en una lista
 function getOrderProduct (product) {
 	return $('<li class="list-group-item"></li>').append(
 		$('<div class="row"></div>').append(
@@ -76,7 +76,7 @@ function getOrderProduct (product) {
 				$('<input value="'+product.count+'" class="cartNodeCount" disabled>'))))
 }
 
-//set the index order as finished and procede to discount the items of the library stock
+// poner la orden del index como finalizado y proceder a descontar los items de la tienda de zapatos
 function checkOrder(index){
 	_orders[index].forEach(orderProduct => 
 		_inventory.forEach((product, index) => {
@@ -88,7 +88,7 @@ function checkOrder(index){
 	removeOrder(index)
 }
 
-//delete the order without discounting the items of the stock
+// eliminar la orden sin descontar los items del stock
 function removeOrder(index){
 	_orders.splice(index, 1)
 	$('#orders').empty()
