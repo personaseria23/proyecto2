@@ -28,8 +28,20 @@ let comUser: Usuario = {
   isAdmin: false
 }
 
-var arrayAccounts [] = [admin, comUser];
+let objArray: Array<Usuario> = new Array();
+let arrayLargo: number = objArray.push(admin);
+arrayLargo = objArray.push(comUser);
+arrayLargo = objArray.push(admin);
 
-function mostrarCuentas(arrayAccounts:any) {
-  
+function mostrarCuentas(arrayAccounts:Usuario) {
+  for (let i = 0; i < objArray.length;i++)
+    console.log(objArray[i]); //por consola
+  console.log(isAdmin(objArray[2]));
+  console.log(true)
+}
+
+function isAdmin(usr: Usuario) {
+  if (usr.isAdmin)
+    return true;
+  else return false;
 }

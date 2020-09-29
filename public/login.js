@@ -1,4 +1,3 @@
-"use strict";
 var admin = {
     user: "admin",
     password: "admin",
@@ -17,6 +16,19 @@ var comUser = {
     direccion: "calle chueca 123",
     isAdmin: false
 };
-var arrayAccounts, _a = [admin, comUser];
+var objArray = new Array();
+var arrayLargo = objArray.push(admin);
+arrayLargo = objArray.push(comUser);
+arrayLargo = objArray.push(admin);
 function mostrarCuentas(arrayAccounts) {
+    for (var i = 0; i < objArray.length; i++)
+        console.log(objArray[i]); //por consola
+    console.log(isAdmin(objArray[2]));
+    console.log(true);
+}
+function isAdmin(usr) {
+    if (usr.isAdmin)
+        return true;
+    else
+        return false;
 }
