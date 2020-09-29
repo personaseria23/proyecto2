@@ -36,12 +36,19 @@ arrayLargo = objArray.push(admin);
 function mostrarCuentas(arrayAccounts:Usuario) {
   for (let i = 0; i < objArray.length;i++)
     console.log(objArray[i]); //por consola
-  console.log(isAdmin(objArray[2]));
-  console.log(true)
+  console.log(validarUsuario(admin))
 }
 
 function isAdmin(usr: Usuario) {
   if (usr.isAdmin)
     return true;
   else return false;
+}
+
+function validarUsuario(usr: Usuario) {
+  for (let i = 0; i < objArray.length; i++){
+    if (objArray[i] === usr) 
+      return true;
+    else return false;
+  }
 }
