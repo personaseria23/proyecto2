@@ -1,14 +1,5 @@
 <!DOCTYPE html>
-
-<script>
-    function capturaDatos(){
-        var nom = document.getElementById('nombre');
-        console.log("hola");
-        console.log(nom);
-    }
-        window.alert('aaaa');
-        
-</script>
+<script>var nombre,email,passwd  = null;</script>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
@@ -36,8 +27,18 @@
         <i class="fas fa-key icon"></i>
         <input id="passwd" type="password" placeholder="Contraseña">
     </div>
-
-    <input type="submit" value="Registrate" class="button" onclick="capturaDatos('nombre')">
+    <script>
+        function sub(){
+            nombre = document.getElementById("nombre").value;
+            email = document.getElementById("email").value;
+            passwd = document.getElementById("passwd").value;
+            capturaDatos(nombre,email,passwd);
+    
+        };
+    </script>
+    
+    <input type="button" value="Registrate" class="button" onclick="sub()">
+    <button type="button" onclick="mostrarCuentas()">VER CUENTAS</button>
     <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
     <p>¿Ya tienes una cuenta?<a class="link" href="inicio.html"> Iniciar Sesion</a></p>
     </form>
