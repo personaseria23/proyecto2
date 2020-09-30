@@ -35,7 +35,8 @@ function isAdmin(usr) {
 //  ------------------
 function Login(usr) {
     if (isAdmin(usr)) {
-        location.href = "index.html";
+        //location.href = "index.html";
+        goto('index');
     }
 }
 // Recibe parametros desde inputs en registro.html. Comprueba si el usuario, si no existe se inserta. RedirTo inicio.html
@@ -61,7 +62,10 @@ function capturaDatos(nombre, email, passwd) {
     console.log(newUser);
     objArray.push(newUser);
     alert("Registro exitoso!");
-    location.href = "inicio.html";
+    //location.href = "inicio.html";
+}
+function goto(view) {
+    location.href = view + ".html";
 }
 //ve si existe 'user' en objArray[]. si no existe lo inserta
 function validarUser(user) {
@@ -78,15 +82,18 @@ function validarLogin(email, passwd) {
     for (var i = 0; i < objArray.length; i++) {
         if (objArray[i].email === email && objArray[i].password === passwd) {
             if (isAdmin(buscarUser(email, passwd))) {
-                location.href = "adminview.html";
+                //location.href = "adminview.html";
+                goto('adminview');
             }
             else {
-                location.href = "index.html";
+                goto('index');
+                //location.href = "index.html";
             }
         }
         else {
             alert("Usuario no existe!");
-            location.href = "inicio.html";
+            //location.href = "inicio.html";
+            goto('inicio');
         }
     }
 }

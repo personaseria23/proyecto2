@@ -48,7 +48,8 @@ function isAdmin(usr: Usuario) {
 //  ------------------
 function Login(usr:Usuario){
   if(isAdmin(usr)){
-    location.href = "index.html";
+    //location.href = "index.html";
+    goto('index');
   }
 }
 
@@ -76,9 +77,11 @@ function capturaDatos(nombre: string, email: string, passwd: string) {
   console.log(newUser)
   objArray.push(newUser);
   alert("Registro exitoso!");
-  location.href = "inicio.html";
+  //location.href = "inicio.html";
 }
-
+function goto(view: string) {
+  location.href = view + ".html";
+}
 //ve si existe 'user' en objArray[]. si no existe lo inserta
 function validarUser(user: Usuario) {
   for (let i = 0; i < objArray.length; i++){
@@ -94,14 +97,17 @@ function validarLogin(email: string, passwd: string) {
   for (let i = 0; i < objArray.length; i++){
     if (objArray[i].email === email && objArray[i].password === passwd) {
       if (isAdmin(buscarUser(email,passwd))) {
-        location.href = "adminview.html";
+        //location.href = "adminview.html";
+        goto('adminview');
       } else {
-        location.href = "index.html";
+        goto('index');
+        //location.href = "index.html";
       }
     }
     else {
       alert("Usuario no existe!");
-      location.href = "inicio.html";
+      //location.href = "inicio.html";
+      goto('inicio');
     }
   }
 }
