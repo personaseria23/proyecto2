@@ -1,26 +1,326 @@
 <!doctype html>
-<html lang="es">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="next" type="text/html" href="registro.html">
+		<script src="https://kit.fontawesome.com/2d81658822.js" crossorigin="anonymous"></script>
+		<title>CA$H & TR4DEZ</title>
+	</head>
+	<body>
+		<div id="login" class="container text-center">
+			<form class="form-signin">
+				<h1>CA$H & TR4DEZ</h1>
+				<h3>Inicie sesión o Regístrese para continuar</h3>
+				<label for="inputUser" class="sr-only">user</label>
+				<input type="text" id="inputUser" class="form-control" autofocus="" placeholder="Username" >
+				<label for="inputPassword" class="sr-only">Password</label>
+				<input type="password" id="inputPassword" class="form-control" placeholder="Password">
+				<button onclick="evaluateLogin()" class="btn btn-lg btn-primary btn-block" type="button">Iniciar Sesión</button>
+				<button onclick="goTo('register')" class="btn btn-lg btn-secondary btn-block" type="button">Registrarse</button>
+			</form>
+		</div>
+		<div id="admin" class="container">
+			<nav class="navbar">
+				<h1 class="navbar-brand" href="#">CA$H &amp; TR4DEZ</h1>
+				<button type="button" class="btn btn-outline-primary" onclick="location.href = 'inicio.html'">
+					<i class="far fa-arrow-alt-circle-left"> Atrás </i>
+				</button>
+			</nav>
+			<div class="row">
+				<div class="col-md">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Pedidos</h5>
+							<div class="card-text">
+								<ul class="list-group" id="orders"></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+								<h5 class="card-title col">Stock</h5>
+								<div class="btn-group mr-4" role="group" aria-label="Basic example">
+									<button class="btn" onclick="importFromCsv()">
+										<i class="fas fa-file-import"></i>
+									</button>
+									<button class="btn" data-toggle="collapse" data-target="#collapseInventory" aria-expanded="false" aria-controls="collapseInventory">
+										<i class="fas fa-plus-circle"></i>
+									</button>
+								</div>
+							</div>
+							<div class="card-text">
+								<div class="collapse" id="collapseInventory">
+									<div class="mt-2 inventoryForm">
+										<form class="needs-validation" novalidate="">
+											<div class="form-group">
+												<label for="productName">Nombre del producto</label>
+												<input id="productName" type="text" class="form-control" required="">
+												<div class="invalid-feedback">
+													Debe ingresar un nombre para el producto
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="productValue">Valor</label>
+												<input id="productValue" type="number" min="1" class="form-control" aria-describedby="valueHelp" required="">
+												<div class="invalid-feedback">
+													El campo Valor no puede ser 0 o negativo.
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="productImg">Imagen</label>
+												<input type="file" accept=".JPG,.JPEG,.PNG" class="form-control-file" id="productImg" aria-describedby="imgAtachmentHelp" required="">
+												<div class="invalid-feedback">
+													Debe ingresar una imagen para el producto.
+												</div>
+												<small id="imgAtachmentHelp" class="form-text text-muted">
+													Formatos permitidos: .JPEG , .JPG , .PNG
+												</small>
+											</div>
+											<div class="form-group">
+												<label>Existencias en stock</label>
+												<input id="productStock" type="number" min="1" class="form-control" required="">
+												<div class="invalid-feedback">
+													El campo Stock no puede ser 0 o negativo.
+												</div>
+											</div>
+											<button type="submit" class="btn btn-primary btn-block" onclick="setProduct()">
+												<i class="fas fa-save" aria-hidden="true"></i>
+											</button>
+										</form>
+									</div>
+								</div>
+								<ul class="list-group list-group-flush" id="inventory"></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="user" class="container">
+			<nav class="navbar">
+				<h1 class="navbar-brand" href="#">CA$H & TR4DEZ</h1>
+				<div>
+					<button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#cartContainer" aria-expanded="false" aria-controls="cartContainer">
+						<i class="fas fa-shopping-cart"></i>
+					</button>
+					<button class="btn btn-outline-primary" onclick="goTo('login')">
+						<i class="fas fa-sign-out-alt"></i>
+					</button>
+				</div>
+			</nav>
+			<div class="collapse mb-3" id="cartContainer">
+			  <div class="card card-body">
+				<ul class="list-group list-group-flush" id="cart">
+				</ul>
+				<form class="needs-validation" novalidate>
+					<label for="attachment">Archivo: (Opcional)</label>
+					<br>
+					<div class="form-group">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="colorOptions" id="color1" value="1">
+							<label class="form-check-label" for="color1">Color: $50</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="colorOptions" id="color2" value="0">
+							<label class="form-check-label" for="color2">B/N: $10</label>
+						</div>
+							<br>
+							<br>  
+						<input type="file" class="form-control-file" id="attachment" aria-describedby="attachmentHelp">
+						<small id="attachmentHelp" class="form-text text-muted">
+							El precio que se muestra es por hoja y no sera agregado al total del pedido, se muestra solo para informar.
+						</small>
+					</div>
+					<div class="form-group">
+						<label for="comment">Comentarios</label>
+						<input  type="text" id="comment" class="form-control" placeholder="Horario, modalidad o peticiones de varias indoles.">
+					</div>
+					
+				</form>
+					<h5 id="total" class="ml-auto">Total: $0</h5>					
+					<button class="btn btn-primary float-right" onclick="processOrder()">Hacer pedido</button>
+				
+			  </div>
+			</div>
+			<div id="products" class="row"></div>
+		</div>
+		<div id="register" class="container">
+			<div class="form_top">
+                <h2>Formulario <span>Registro</span></h2>
+            </div>
+            <form class="form_reg" action="">
+                <input class="inputUser" type="text" placeholder="Nombre de Usuario" required autofocus>
+                <input class="inputPassword" type="password" placeholder="Contraseña" required >
+                <input class="inputNombre" type="text" placeholder="Nombre" required >
+                <input class="inputApellidos" type="text" placeholder="Apellidos" required>
+                <input class="inputEmail" type="text" placeholder="Email" required>
+                <input class="inputDir" type="text" placeholder="Dirección" required>
+                <div class="btn_form">
+					<input class="btn_back" type="submit" value="Volver" formnovalidate>
+                    <input class="btn_reset" type="reset" value="Limpiar">
+					<input onclick="register(inputUser,inputPassword)" class="btn_submit" type="submit" value="Registrar">
+                </div>
+            </form>
+		</div>
+		<!-- Modals -->
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<!--Invalid account modal-->
+		<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						Las credenciales no son correctas.
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <title>Tienda</title>
-  </head>
-  <body>
-    <h1>Tienda CA$SH $ TR4DEZ</h1>
+		<!--Register complete modal-->
+		<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						Registro completado.
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<!--Existing user modal-->
+		<div class="modal fade" id="userExistModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						Usuario invalido intenta de nuevo.
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<!--Empty cart modal-->
+		<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						No se han agregado objetos al carrito.
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<!--Processed order modal-->
+		<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						Se ha realizado el pedido exitosamente.
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!-- Optional JavaScript -->
-    <script type="text/javascript" src="login.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
-</html>
+		<!--Complete order modal-->
+		<div class="modal fade" id="completeOrderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						Se ha registrado la orden completada.
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Delete uncomplete orders modal-->
+		<div class="modal fade" id="uncompleteOrderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						Se ha eliminado una orden sin completar.
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Not selected color modal-->
+		<div class="modal fade" id="colorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						No se ha elegido el color de la impresion.
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--New product Form validation script -->
+		<script>
+			(function() {
+			  'use strict';
+			  window.addEventListener('load', function() {
+				var forms = document.getElementsByClassName('needs-validation');
+				var validation = Array.prototype.filter.call(forms, function(form) {
+				  form.addEventListener('submit', function(event) {
+					if (form.checkValidity() === false) {
+					  event.preventDefault();
+					  event.stopPropagation();
+					}
+					form.classList.add('was-validated');
+				  }, false);
+				});
+			  }, false);
+			})();
+			</script>
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="/__/firebase/7.16.1/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+		     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+		<!-- Initialize Firebase -->
+		<script src="/__/firebase/init.js"></script>
+	
+		<!-- Optional JavaScript -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/papaparse@5.2.0/papaparse.min.js"></script>
+
+		<script type="text/javascript" src="js/user/cart.js"></script>
+		<script type="text/javascript" src="js/user/gallery.js"></script>
+		<script type="text/javascript" src="js/admin/orders.js"></script>
+		<script type="text/javascript" src="js/admin/inventory.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+	</body>
+</html> 

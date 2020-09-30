@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 	<head>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
@@ -8,12 +8,13 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="index.css">
 		<script src="https://kit.fontawesome.com/2d81658822.js" crossorigin="anonymous"></script>
-		<title>CA$H & TR4DEZ</title>
+        <title>AutoLibrary</title>
+        
 	</head>
 	<body>
 		<!--<div id="admin" class="container">
 			<nav class="navbar">
-				<h1 class="navbar-brand" href="#">CA$H & TR4DEZ</h1>
+				<h1 class="navbar-brand" href="#">AutoLibrary</h1>
 				<button class="btn btn-outline-primary" onclick="goTo('login')">
 					<i class="fas fa-sign-out-alt"></i>
 				</button>
@@ -90,15 +91,17 @@
 					</div>
 				</div>
 			</div>
-		</div>-->
-		<div id="user" class="container">
-			<nav class="navbar">
-				<h1 class="navbar-brand" href="#">CA$H & TR4DEZ</h1>
+        </div>-->
+        
+        <div id="user" class="container">	
+            <h1>HOLA</h1>
+            <nav class="navbar">
+				<h1 class="navbar-brand" href="#">AutoLibrary</h1>
 				<div>
 					<button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#cartContainer" aria-expanded="false" aria-controls="cartContainer">
 						<i class="fas fa-shopping-cart"></i>
 					</button>
-					<button class="btn btn-outline-primary" onclick="goTo('login')">
+					<button class="btn btn-outline-primary" onclick="goTo('user')">
 						<i class="fas fa-sign-out-alt"></i>
 					</button>
 				</div>
@@ -139,24 +142,6 @@
 			</div>
 			<div id="products" class="row"></div>
 		</div>
-		<!--<div id="register" class="container">
-			<div class="form_top">
-                <h2>Formulario <span>Registro</span></h2>
-            </div>
-            <form class="form_reg" action="">
-                <input class="inputUser" type="text" placeholder="Nombre de Usuario" required autofocus>
-                <input class="inputPassword" type="password" placeholder="Contraseña" required autofocus>
-                <input class="inputNombre" type="text" placeholder="Nombre" required >
-                <input class="inputApellidos" type="text" placeholder="Apellidos" required>
-                <input class="inputEmail" type="text" placeholder="Email" required>
-                <input class="inputDir" type="text" placeholder="Dirección" required>
-                <div class="btn_form">
-					<input class="btn_back" type="button" value="Atrás" onclick="goTo('login')">
-                    <input class="btn_reset" type="reset" value="Limpiar">
-                    <input class="btn_submit" type="submit" value="Registrar">
-                </div>
-            </form>
-		</div>-->
 		<!-- Modals -->
 
 		<!--Invalid account modal-->
@@ -290,22 +275,24 @@
 			</script>
 
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		
+		<!--<script src="/__/firebase/7.16.1/firebase-app.js"></script>-->
 
 		<!-- TODO: Add SDKs for Firebase products that you want to use
 		     https://firebase.google.com/docs/web/setup#available-libraries -->
 
 		<!-- Initialize Firebase -->
-		
+		<!--<script src="/__/firebase/init.js"></script>-->
 	
 		<!-- Optional JavaScript -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/papaparse@5.2.0/papaparse.min.js"></script>
+
 		<script type="text/javascript" src="js/user/cart.js"></script>
 		<script type="text/javascript" src="js/user/gallery.js"></script>
 		<script type="text/javascript" src="js/admin/orders.js"></script>
 		<script type="text/javascript" src="js/admin/inventory.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
 	</body>
 </html>
