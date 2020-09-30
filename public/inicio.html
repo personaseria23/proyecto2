@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<script>
-    
+<script>  
     function capturaLogin(){
             let email = document.getElementById("email").value;
-            let passwd = document.getElementById("passwd").value;
-            alert(email +" "+ passwd);
-            validarLogin(email,passwd);
-            
-           
-    
+            let passwd = document.getElementById("passwd").value;         
+            validarLogin(email,passwd);         
         };
 </script>
 
@@ -24,7 +19,7 @@
 </head>  
 <body>
     <form class="formulario">   
-        <button type="button" onclick="mostrarCuentas()">VER CUENTAS</button>
+        <!--button type="button" onclick="mostrarCuentas()">VER CUENTAS</button-->
     <h1>Login</h1>
      <div class="contenedor">
          <div class="input-contenedor">
@@ -36,7 +31,6 @@
             <input id="passwd" type="password" placeholder="Contraseña"> 
          </div>
          <input type="button" value="Login" class="button" onclick='capturaLogin()'  >
-         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
          <p>¿No tienes una cuenta? <a class="link" href="registro.html">Registrate </a></p>
      </div>
     </form>

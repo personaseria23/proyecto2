@@ -1,7 +1,9 @@
-let objArray: Array<Usuario> = new Array();
+
+//instancias globales
+let objArray: Array<Usuario> = new Array();  //Tipo Usuario
 let arrayLargo: number;
 
-
+// interface Usuario
 interface Usuario{
   password: string;
   nombre: string;
@@ -9,29 +11,26 @@ interface Usuario{
   lvl: boolean;
 }
 
-
+//Usuario admin
 let admin: Usuario = {
-  password: "p",
+  password: "w",
   nombre: "admin",
-  email: "e",
+  email: "q",
   lvl: true
 }
-
+// Usuario "common user"
 let comUser: Usuario = {
-
-  password: "p1",
+  password: "s",
   nombre: "user",
-  email: "e1",
+  email: "a",
   lvl: false
 }
+
+//inserta cuentas iniciales
 arrayLargo = objArray.push(admin);
 arrayLargo = objArray.push(comUser);
 
-/*
-agregarUsr(admin);
-
-agregarUsr(comUser);
-*/
+// muestra los obj de objArray[] por consola
 function mostrarCuentas() {
   console.clear();  
   for (let i = 0; i < objArray.length; i++) {
@@ -39,18 +38,22 @@ function mostrarCuentas() {
   } //por consola
 }
 
+// Consulta si el usuario es un Admin. Retorna boolean
 function isAdmin(usr: Usuario) {
   if (usr.lvl)
     return true;
   else return false;
 }
 
+//  ------------------
 function Login(usr:Usuario){
   if(isAdmin(usr)){
-    location.href = "index.html";
+    //location.href = "index.html";
+    goto('index');
   }
 }
 
+// Recibe parametros desde inputs en registro.html. Comprueba si el usuario, si no existe se inserta. RedirTo inicio.html
 function capturaDatos(nombre: string, email: string, passwd: string) {
   let newUser: Usuario = {
     password : "null",
@@ -61,10 +64,8 @@ function capturaDatos(nombre: string, email: string, passwd: string) {
   newUser.email = email;
   newUser.nombre = nombre;
   newUser.password = passwd;
-  
   console.log(newUser);
   console.clear();
-
   for (let i = 0;i< objArray.length; i++){
     console.log(objArray[i]);
     if (objArray[i].email === newUser.email || objArray[i].nombre === newUser.nombre) {
@@ -76,43 +77,40 @@ function capturaDatos(nombre: string, email: string, passwd: string) {
   console.log(newUser)
   objArray.push(newUser);
   alert("Registro exitoso!");
-  location.href = "inicio.html";
+  //location.href = "inicio.html";
 }
-
+function goto(view: string) {
+  location.href = view + ".html";
+}
+//ve si existe 'user' en objArray[]. si no existe lo inserta
 function validarUser(user: Usuario) {
-
   for (let i = 0; i < objArray.length; i++){
     console.log(objArray[i]);
-    if (objArray[i].nombre === user.nombre && objArray[i].email === user.email){
+    if (objArray[i].nombre === user.nombre && objArray[i].email === user.email)
       break;
-    }
   }
   arrayLargo = objArray.push(user);
 }
-
-
-function validarLogin(email :string, passwd :string) {
+//Valida el login de un usuario. lo busca en objArray[], si lo encuentra comprueba si es Admin y redirecciona a la vista
+//Si no se encuentra el usuario Refresca la página mandando un aviso de inexistencia.
+function validarLogin(email: string, passwd: string) {
   for (let i = 0; i < objArray.length; i++){
     if (objArray[i].email === email && objArray[i].password === passwd) {
       if (isAdmin(buscarUser(email,passwd))) {
-        location.href = "adminview.html";
+        goto('adminview');
+        return;
       } else {
-        location.href = "index.html";
+        goto('tienda');
+        return;
       }
     }
   }
+  
+  alert('El usuario no existe!');
+  goto('inicio');
 }
-/*
-function buscarUser(email: string, passwd: string) {
-  
-  for (let i = 0; i < objArray.length; i++) {
-    if (objArray[i].email === email && objArray[i].password === passwd) {
-      return objArray[i];
-    }
-  }
-  
-  return ;
-}*/
+
+//Busca un usuario en ObjArray. Retorna el Obj o un Obj inicializado en null.
 function buscarUser(email: string, passwd: string) {
   let u: Usuario = {
     password : "null",
