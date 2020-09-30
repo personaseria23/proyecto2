@@ -1,30 +1,22 @@
 interface Usuario{
-  user: string;
   password: string;
-  nombres: string;
-  apellidos: string;
+  nombre: string;
   email: string;
-  direccion: string;
   isAdmin: boolean;
 }
 
 let admin: Usuario = {
-  user: "admin",
   password: "admin",
-  nombres: "El Admin",
-  apellidos: "Selac Ome",
+  nombre: "El Admin",
   email: "eladmin@gmail.com",
-  direccion: "calle falsa 123",
   isAdmin: true
 }
 
 let comUser: Usuario = {
-  user: "user1",
+
   password: "user",
-  nombres: "elvio sadi",
-  apellidos: "cabezas negras",
+  nombre: "elvio sadi",
   email: "elvistek@gmail.com",
-  direccion: "calle chueca 123",
   isAdmin: false
 }
 
@@ -38,6 +30,7 @@ function mostrarCuentas(arrayAccounts:Usuario) {
   for (let i = 0; i < objArray.length;i++)
     console.log(objArray[i]); //por consola
   console.log(validarUsuario(admin))
+  location.href = "adminview.html";
 }
 
 function isAdmin(usr: Usuario) {
@@ -54,5 +47,15 @@ function validarUsuario(usr: Usuario) {
   }
 }
 function agregarUsr(usr: Usuario) {
-  arrayLargo = objArray.push(usr);
+  if (!validarUsuario(usr))
+    arrayLargo = objArray.push(usr);
+  else window.alert("¡Ya se encuentra registrado!");
 }
+
+function Login(usr:Usuario){
+  if(isAdmin(usr)){
+    location.href = "index.html";
+  }
+}
+
+

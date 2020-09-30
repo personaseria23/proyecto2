@@ -1,19 +1,13 @@
 var admin = {
-    user: "admin",
     password: "admin",
-    nombres: "El Admin",
-    apellidos: "Selac Ome",
+    nombre: "El Admin",
     email: "eladmin@gmail.com",
-    direccion: "calle falsa 123",
     isAdmin: true
 };
 var comUser = {
-    user: "user1",
     password: "user",
-    nombres: "elvio sadi",
-    apellidos: "cabezas negras",
+    nombre: "elvio sadi",
     email: "elvistek@gmail.com",
-    direccion: "calle chueca 123",
     isAdmin: false
 };
 var objArray = new Array();
@@ -25,6 +19,7 @@ function mostrarCuentas(arrayAccounts) {
     for (var i = 0; i < objArray.length; i++)
         console.log(objArray[i]); //por consola
     console.log(validarUsuario(admin));
+    location.href = "adminview.html";
 }
 function isAdmin(usr) {
     if (usr.isAdmin)
@@ -41,5 +36,13 @@ function validarUsuario(usr) {
     }
 }
 function agregarUsr(usr) {
-    arrayLargo = objArray.push(usr);
+    if (!validarUsuario(usr))
+        arrayLargo = objArray.push(usr);
+    else
+        window.alert("¡Ya se encuentra registrado!");
+}
+function Login(usr) {
+    if (isAdmin(usr)) {
+        location.href = "index.html";
+    }
 }
