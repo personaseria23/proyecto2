@@ -27,11 +27,7 @@ let comUser: Usuario = {
 arrayLargo = objArray.push(admin);
 arrayLargo = objArray.push(comUser);
 
-/*
-agregarUsr(admin);
 
-agregarUsr(comUser);
-*/
 function mostrarCuentas() {
   console.clear();  
   for (let i = 0; i < objArray.length; i++) {
@@ -91,7 +87,8 @@ function validarUser(user: Usuario) {
 }
 
 
-function validarLogin(email :string, passwd :string) {
+function validarLogin(email: string, passwd: string) {
+ 
   for (let i = 0; i < objArray.length; i++){
     if (objArray[i].email === email && objArray[i].password === passwd) {
       if (isAdmin(buscarUser(email,passwd))) {
@@ -100,19 +97,13 @@ function validarLogin(email :string, passwd :string) {
         location.href = "index.html";
       }
     }
-  }
-}
-/*
-function buscarUser(email: string, passwd: string) {
-  
-  for (let i = 0; i < objArray.length; i++) {
-    if (objArray[i].email === email && objArray[i].password === passwd) {
-      return objArray[i];
+    else {
+      alert("Usuario no existe!");
+      location.href = "inicio.html";
     }
   }
-  
-  return ;
-}*/
+}
+
 function buscarUser(email: string, passwd: string) {
   let u: Usuario = {
     password : "null",

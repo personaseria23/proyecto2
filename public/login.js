@@ -14,11 +14,6 @@ var comUser = {
 };
 arrayLargo = objArray.push(admin);
 arrayLargo = objArray.push(comUser);
-/*
-agregarUsr(admin);
-
-agregarUsr(comUser);
-*/
 function mostrarCuentas() {
     console.clear();
     for (var i = 0; i < objArray.length; i++) {
@@ -79,19 +74,12 @@ function validarLogin(email, passwd) {
                 location.href = "index.html";
             }
         }
+        else {
+            alert("Usuario no existe!");
+            location.href = "inicio.html";
+        }
     }
 }
-/*
-function buscarUser(email: string, passwd: string) {
-  
-  for (let i = 0; i < objArray.length; i++) {
-    if (objArray[i].email === email && objArray[i].password === passwd) {
-      return objArray[i];
-    }
-  }
-  
-  return ;
-}*/
 function buscarUser(email, passwd) {
     var u = {
         password: "null",
