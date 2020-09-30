@@ -1,11 +1,5 @@
 var objArray = new Array();
 var arrayLargo;
-var newUser = {
-    password: "null",
-    nombre: "null",
-    email: "null",
-    lvl: false
-};
 var admin = {
     password: "p",
     nombre: "admin",
@@ -18,9 +12,14 @@ var comUser = {
     email: "e1",
     lvl: false
 };
+arrayLargo = objArray.push(admin);
+arrayLargo = objArray.push(comUser);
+/*
 agregarUsr(admin);
+
 agregarUsr(comUser);
-function mostrarCuentas(arrayAccounts) {
+*/
+function mostrarCuentas() {
     console.clear();
     for (var i = 0; i < objArray.length; i++) {
         console.log(objArray[i]);
@@ -32,31 +31,78 @@ function isAdmin(usr) {
     else
         return false;
 }
-//busca el usuario en el array
-function validarUsuario(usr) {
-    alert(usr.nombre + " validarusr");
-    for (var i = 0; i < objArray.length; i++) {
-        if (objArray[i].email === usr.email) {
-            window.alert("¡Ya se encuentra registrado!");
-            return true;
-        }
-    }
-    return false;
-}
-function agregarUsr(usr) {
-    if (validarUsuario(usr) === false)
-        arrayLargo = objArray.push(usr);
-}
 function Login(usr) {
     if (isAdmin(usr)) {
         location.href = "index.html";
     }
 }
 function capturaDatos(nombre, email, passwd) {
-    newUser.nombre = nombre;
+    var newUser = {
+        password: "null",
+        nombre: "null",
+        email: "null",
+        lvl: false
+    };
     newUser.email = email;
+    newUser.nombre = nombre;
     newUser.password = passwd;
-    alert(newUser.nombre);
-    validarUsuario(newUser);
-    //mostrarCuentas(objArray);
+    console.log(newUser);
+    console.clear();
+    for (var i = 0; i < objArray.length; i++) {
+        console.log(objArray[i]);
+        if (objArray[i].email === newUser.email || objArray[i].nombre === newUser.nombre) {
+            alert("El user EXISTE");
+            return;
+        }
+    }
+    console.log(newUser);
+    objArray.push(newUser);
+    alert("Registro exitoso!");
+    location.href = "inicio.html";
+}
+function validarUser(user) {
+    for (var i = 0; i < objArray.length; i++) {
+        console.log(objArray[i]);
+        if (objArray[i].nombre === user.nombre && objArray[i].email === user.email) {
+            break;
+        }
+    }
+    arrayLargo = objArray.push(user);
+}
+function validarLogin(email, passwd) {
+    for (var i = 0; i < objArray.length; i++) {
+        if (objArray[i].email === email && objArray[i].password === passwd) {
+            if (isAdmin(buscarUser(email, passwd))) {
+                location.href = "adminview.html";
+            }
+            else {
+                location.href = "index.html";
+            }
+        }
+    }
+}
+/*
+function buscarUser(email: string, passwd: string) {
+  
+  for (let i = 0; i < objArray.length; i++) {
+    if (objArray[i].email === email && objArray[i].password === passwd) {
+      return objArray[i];
+    }
+  }
+  
+  return ;
+}*/
+function buscarUser(email, passwd) {
+    var u = {
+        password: "null",
+        nombre: "null",
+        email: "null",
+        lvl: false
+    };
+    for (var i = 0; i < objArray.length; i++) {
+        if (objArray[i].email === email && objArray[i].password === passwd) {
+            return objArray[i];
+        }
+    }
+    return u;
 }

@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<script>
+    
+    function capturaLogin(){
+            let email = document.getElementById("email").value;
+            let passwd = document.getElementById("passwd").value;
+            alert(email +" "+ passwd);
+            validarLogin(email,passwd);
+            
+           
+    
+        };
+</script>
+
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
@@ -16,13 +29,13 @@
      <div class="contenedor">
          <div class="input-contenedor">
             <i class="fas fa-envelope icon"></i>
-            <input type="text" placeholder="Correo Electronico">        
+            <input id="email" type="text" placeholder="Correo Electronico">        
          </div>         
          <div class="input-contenedor">
             <i class="fas fa-key icon"></i>
-            <input type="password" placeholder="Contraseña"> 
+            <input id="passwd" type="password" placeholder="Contraseña"> 
          </div>
-         <a><input type="submit" value="Login" class="button" onclick="location.href = 'index.html'"></a>
+         <input type="button" value="Login" class="button" onclick='capturaLogin()'  >
          <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
          <p>¿No tienes una cuenta? <a class="link" href="registro.html">Registrate </a></p>
      </div>
