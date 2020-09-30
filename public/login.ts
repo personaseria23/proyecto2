@@ -3,7 +3,7 @@
 let objArray: Array<Usuario> = new Array();  //Tipo Usuario
 let arrayLargo: number;
 
-// interface & class Usuario
+// interface Usuario
 interface Usuario{
   password: string;
   nombre: string;
@@ -13,16 +13,16 @@ interface Usuario{
 
 //Usuario admin
 let admin: Usuario = {
-  password: "p",
+  password: "w",
   nombre: "admin",
-  email: "e",
+  email: "q",
   lvl: true
 }
 // Usuario "common user"
 let comUser: Usuario = {
-  password: "p1",
+  password: "s",
   nombre: "user",
-  email: "e1",
+  email: "a",
   lvl: false
 }
 

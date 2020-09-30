@@ -3,16 +3,16 @@ var objArray = new Array(); //Tipo Usuario
 var arrayLargo;
 //Usuario admin
 var admin = {
-    password: "p",
+    password: "w",
     nombre: "admin",
-    email: "e",
+    email: "q",
     lvl: true
 };
 // Usuario "common user"
 var comUser = {
-    password: "p1",
+    password: "s",
     nombre: "user",
-    email: "e1",
+    email: "a",
     lvl: false
 };
 //inserta cuentas iniciales
