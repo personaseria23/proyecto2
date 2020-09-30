@@ -82,20 +82,17 @@ function validarLogin(email, passwd) {
     for (var i = 0; i < objArray.length; i++) {
         if (objArray[i].email === email && objArray[i].password === passwd) {
             if (isAdmin(buscarUser(email, passwd))) {
-                //location.href = "adminview.html";
                 goto('adminview');
+                return;
             }
             else {
-                goto('index');
-                //location.href = "index.html";
+                goto('tienda');
+                return;
             }
         }
-        else {
-            alert("Usuario no existe!");
-            //location.href = "inicio.html";
-            goto('inicio');
-        }
     }
+    alert('El usuario no existe!');
+    goto('inicio');
 }
 //Busca un usuario en ObjArray. Retorna el Obj o un Obj inicializado en null.
 function buscarUser(email, passwd) {
