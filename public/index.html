@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
@@ -7,24 +7,11 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="index.css">
-		<link rel="next" type="text/html" href="registro.html">
 		<script src="https://kit.fontawesome.com/2d81658822.js" crossorigin="anonymous"></script>
 		<title>CA$H & TR4DEZ</title>
 	</head>
 	<body>
-		<div id="login" class="container text-center">
-			<form class="form-signin">
-				<h1>CA$H & TR4DEZ</h1>
-				<h3>Inicie sesión o Regístrese para continuar</h3>
-				<label for="inputUser" class="sr-only">user</label>
-				<input type="text" id="inputUser" class="form-control" autofocus="" placeholder="Username" >
-				<label for="inputPassword" class="sr-only">Password</label>
-				<input type="password" id="inputPassword" class="form-control" placeholder="Password">
-				<button onclick="evaluateLogin()" class="btn btn-lg btn-primary btn-block" type="button">Iniciar Sesión</button>
-				<button onclick="goTo('register')" class="btn btn-lg btn-secondary btn-block" type="button">Registrarse</button>
-			</form>
-		</div>
-		<div id="admin" class="container">
+		<!--<div id="admin" class="container">
 			<nav class="navbar">
 				<h1 class="navbar-brand" href="#">CA$H & TR4DEZ</h1>
 				<button class="btn btn-outline-primary" onclick="goTo('login')">
@@ -103,7 +90,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<div id="user" class="container">
 			<nav class="navbar">
 				<h1 class="navbar-brand" href="#">CA$H & TR4DEZ</h1>
@@ -152,7 +139,7 @@
 			</div>
 			<div id="products" class="row"></div>
 		</div>
-		<div id="register" class="container">
+		<!--<div id="register" class="container">
 			<div class="form_top">
                 <h2>Formulario <span>Registro</span></h2>
             </div>
@@ -169,7 +156,7 @@
                     <input class="btn_submit" type="submit" value="Registrar">
                 </div>
             </form>
-		</div>
+		</div>-->
 		<!-- Modals -->
 
 		<!--Invalid account modal-->
@@ -303,25 +290,22 @@
 			</script>
 
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="/__/firebase/7.16.1/firebase-app.js"></script>
+		
 
 		<!-- TODO: Add SDKs for Firebase products that you want to use
 		     https://firebase.google.com/docs/web/setup#available-libraries -->
 
 		<!-- Initialize Firebase -->
-		<script src="/__/firebase/init.js"></script>
+		
 	
 		<!-- Optional JavaScript -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/papaparse@5.2.0/papaparse.min.js"></script>
-
 		<script type="text/javascript" src="js/user/cart.js"></script>
 		<script type="text/javascript" src="js/user/gallery.js"></script>
 		<script type="text/javascript" src="js/admin/orders.js"></script>
 		<script type="text/javascript" src="js/admin/inventory.js"></script>
-		<script type="text/javascript" src="js/login.js"></script>
-		<script type="text/javascript" src="login.js"></script>
 	</body>
 </html>
