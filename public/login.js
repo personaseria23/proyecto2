@@ -7,22 +7,24 @@ var newUser = {
     lvl: false
 };
 var admin = {
-    password: "admin",
-    nombre: "El Admin",
-    email: "eladmin@gmail.com",
+    password: "p",
+    nombre: "admin",
+    email: "e",
     lvl: true
 };
 var comUser = {
-    password: "user",
-    nombre: "elvio sadi",
-    email: "elvistek@gmail.com",
+    password: "p1",
+    nombre: "user",
+    email: "e1",
     lvl: false
 };
-arrayLargo = objArray.push(admin);
-arrayLargo = objArray.push(comUser);
+agregarUsr(admin);
+agregarUsr(comUser);
 function mostrarCuentas(arrayAccounts) {
-    for (var i = 0; i < objArray.length; i++)
-        console.log(objArray[i]); //por consola
+    console.clear();
+    for (var i = 0; i < objArray.length; i++) {
+        console.log(objArray[i]);
+    } //por consola
 }
 function isAdmin(usr) {
     if (usr.lvl)
@@ -30,42 +32,27 @@ function isAdmin(usr) {
     else
         return false;
 }
+//busca el usuario en el array
 function validarUsuario(usr) {
+    alert(usr.nombre + " validarusr");
     for (var i = 0; i < objArray.length; i++) {
-        if (objArray[i] === usr) {
-            if (isAdmin(usr)) {
-                //location.href = "adminview.html";
-                return true;
-            }
-            else {
-                //location.href = "index.html";
-                return true;
-            }
+        if (objArray[i].email === usr.email) {
+            window.alert("¡Ya se encuentra registrado!");
+            return true;
         }
-        else {
-            //location.href = "inicio.html";
-            arrayLargo = objArray.push(usr);
-            return false;
-        }
-        ;
     }
+    return false;
 }
-/*
-function agregarUsr(usr: Usuario) {
-  if (!validarUsuario(usr)) {
-  arrayLargo = objArray.push(usr);
+function agregarUsr(usr) {
+    if (validarUsuario(usr) === false)
+        arrayLargo = objArray.push(usr);
 }
-  else window.alert("¡Ya se encuentra registrado!");
-}
-*/
 function Login(usr) {
     if (isAdmin(usr)) {
         location.href = "index.html";
     }
 }
 function capturaDatos(nombre, email, passwd) {
-    alert('holaas');
-    alert(nombre + " " + email + " " + passwd);
     newUser.nombre = nombre;
     newUser.email = email;
     newUser.password = passwd;

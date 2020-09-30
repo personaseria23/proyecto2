@@ -16,25 +16,29 @@ let newUser: Usuario = {
 };
 
 let admin: Usuario = {
-  password: "admin",
-  nombre: "El Admin",
-  email: "eladmin@gmail.com",
+  password: "p",
+  nombre: "admin",
+  email: "e",
   lvl: true
 }
 
 let comUser: Usuario = {
 
-  password: "user",
-  nombre: "elvio sadi",
-  email: "elvistek@gmail.com",
+  password: "p1",
+  nombre: "user",
+  email: "e1",
   lvl: false
 }
-arrayLargo=objArray.push(admin);
-arrayLargo=objArray.push(comUser);
+agregarUsr(admin);
 
-function mostrarCuentas(arrayAccounts:Usuario) {
-  for (let i = 0; i < objArray.length;i++)
-    console.log(objArray[i]); //por consola
+agregarUsr(comUser);
+
+function mostrarCuentas(arrayAccounts: Usuario) {
+  console.clear();
+  for (let i = 0; i < objArray.length; i++) {
+    
+    console.log(objArray[i]);
+  } //por consola
 }
 
 function isAdmin(usr: Usuario) {
@@ -43,33 +47,22 @@ function isAdmin(usr: Usuario) {
   else return false;
 }
 
+//busca el usuario en el array
 function validarUsuario(usr: Usuario) {
+  alert(usr.nombre+" validarusr");
   for (let i = 0; i < objArray.length; i++){
-    if (objArray[i] === usr) {
-      if (isAdmin(usr)) {
-        //location.href = "adminview.html";
-        return true;
-      }
-      else {
-        //location.href = "index.html";
-        return true;
-      }
+    if (objArray[i].email === usr.email) {
+      window.alert("¡Ya se encuentra registrado!");
+      return true;
     }
-    else {
-      //location.href = "inicio.html";
-      arrayLargo = objArray.push(usr);
-      return false;
-    };
   }
+  return false ;
 }
-/*
+
 function agregarUsr(usr: Usuario) {
-  if (!validarUsuario(usr)) { 
-  arrayLargo = objArray.push(usr);
+  if(validarUsuario(usr) === false)
+    arrayLargo = objArray.push(usr);
 }
-  else window.alert("¡Ya se encuentra registrado!");
-}
-*/
 
 function Login(usr:Usuario){
   if(isAdmin(usr)){
@@ -78,8 +71,8 @@ function Login(usr:Usuario){
 }
 
 function capturaDatos(nombre: string, email: string, passwd: string) {
-  alert('holaas');
-  alert(nombre + " " + email + " " + passwd);
+  
+  
   newUser.nombre = nombre;
   newUser.email = email;
   newUser.password = passwd;
