@@ -1,12 +1,12 @@
 let _cart = []
 
-// return current user cart // devolver el carrito del usuario
+// devolver el carrito del usuario
 let getCart = () => {return _cart}
 
-// Fill cart node with product nodes from cart array // Llenar el nodo carrito con nodo productos desde el arrego carrito
+// Llenar el nodo carrito con nodo productos desde el arreglo carrito
 let addCartNode = product => $('#cart').append(getCartNode(product))
 
-// remove an element from user cart // remover un elemento del carrito del usuario 
+// remover un elemento del carrito del usuario 
 function removeProduct (node,name) {
 	$(node).parent().parent().parent().remove()
 	for (let i=0; i<_cart.length; i++){
@@ -16,10 +16,10 @@ function removeProduct (node,name) {
 	$('#total').text('Total: $'+ getTotal())
 }
 
-// add product to cart array // agregar un producto al arreglo carritos
+// agregar un producto al arreglo carritos
 function addProductToCart (id) {
 	let currentProduct = getProduct(id)
-	// check if product exist // revisa si existe el producto
+	// revisa si existe el producto
 	for(var i=0; i <_cart.length; i++)
 		if(currentProduct.name == _cart[i].name){
 			$('.cartNodeCount')[i].value = ++_cart[i].count
@@ -32,7 +32,7 @@ function addProductToCart (id) {
 	$('#total').text('Total: $'+ getTotal())
 	return
 }
-//fill with the total of the current elements in it // llena con el total de los elementos actual en el carrito
+// llena con el total de los elementos actual en el carrito
 function getTotal(){
 	let totalValue = 0
 	for(let i=0 ; i<_cart.length;i++){
@@ -42,7 +42,7 @@ function getTotal(){
 	return totalValue
 }
 
-// add cart to orders list // agrega carro a la lista de ordenes
+// agrega carro a la lista de ordenes
 function processOrder () {
 	if( _cart.length < 1 && document.getElementById('attachment').files.length == 0 ){
 		$('#cartModal').modal('show')
@@ -70,27 +70,27 @@ function processOrder () {
 	}
 }
 
-// generate the order // genera la orden
+// genera la orden
 function generateOrder (attachmentUrl) {
 	let order = [{
 		name: userEmail,
 		attachment: attachmentUrl,
 		comment: $('#comment').val()
 	}].concat(_cart)
-	// add count for every product in the cart // agregar contador de cada producto en el carro
+	// agregar contador de cada producto en el carro
 	$('.cartNodeCount').map((index, node) => {
 		order[index+1].count = parseInt($(node).val())})
-	// clear cart
+	// limpiar carrito
 	_cart = []
 	$('#cart').empty()
 	$('#attachment').val('')
 	$('#comment').val('')
 	$('#total').text('Total: $0')
-	// add the order
+	// agregar la orden
 	_orders.push(order)
 }
 
-// get a cart node for insert in DOM // obtener un nodo carrito para insertarlo en DOM  
+// obtener un nodo carrito para insertarlo en DOM  
 function getCartNode (product) {
 	return $('<li class="list-group-item"></li>').append(
 		$('<div class="row"></div>').append(
@@ -105,7 +105,7 @@ function getCartNode (product) {
 					$('<i class="fas fa-trash-alt"></i>')))))
 }
 
-// Update count of every product by his input in the cart // Actualizar el contador de cada producto por su input en el carro
+// Actualizar el contador de cada producto por su input en el carro
 function updateCount () {
 	$('.cartNodeCount').map((index, node) => {
 		let inputCount = parseInt($(node).val())
