@@ -1,0 +1,24 @@
+*{
+    margin : 0;
+    padding: 0;
+}
+.grid div:hover{
+    border: 1px solid yellow;
+}
+.navbar{
+    background: lightseagreen;
+    display : grid;
+    grid-template-columns: 90% 10%;
+}
+body{
+    background:grey;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.navbar button{
+    background: lightseagreen;
+}
+
+.navbar div{
+    color: whitesmoke;
+}
