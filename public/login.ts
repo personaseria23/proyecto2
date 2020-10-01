@@ -100,7 +100,7 @@ function validarLogin(email: string, passwd: string) {
         goto('adminview');
         return;
       } else {
-        goto('tienda');
+        goto('tienda2');
         return;
       }
     }

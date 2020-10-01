@@ -86,7 +86,7 @@ function validarLogin(email, passwd) {
                 return;
             }
             else {
-                goto('tienda');
+                goto('tienda2');
                 return;
             }
         }
