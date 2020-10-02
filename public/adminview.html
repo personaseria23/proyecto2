@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="css/adminStyle.css">
-  
+  <link rel="stylesheet" href="css/tienda.css">
+
   <title>Administrator</title>
 </head>
 <!--<button type="button" class="btn btn-outline-primary" onclick="location.href = 'inicio.html'">
@@ -19,13 +20,18 @@
 
 <body>
   <div class="container">
-    <div class="navbar">
-      <div>CA$H & TR4DEZ : Admin</div>
-      <button type="button" class="btn btn-outline-primary" onclick="location.href = 'inicio.html'">
-        <i class="far fa-arrow-alt-circle-left"> Atrás </i>
-      </button>
-    </div>
-    <div class="contenido">
+    <header class="header">
+      <div class="container logo-nav-container">
+        <a href="#" class="logo">C&T</a>
+        <nav class="navigation">
+          <ul>
+            <li><a href="inicio.html">Iniciar Sesion</a></li>
+            <li><a href="#">Hombre</a></li>
+            <li><a href="#">Mujer</a></li>
+            <li><a href="#">Niño</a></li>
+          </ul>
+        </nav>
+      </div>
       <div class="actionButtons">
         <button type="button" onclick="">
           <i class="fas fa-check-circle"></i>
@@ -38,6 +44,9 @@
         </button>
 
       </div>
+    </header>
+    <div class="contenido">
+
       <div class="gridCont">
         <div class="gridOrdenes" id="ordenes">
           <div>Lorem, ipsum dolor.</div>
@@ -49,31 +58,73 @@
           <div>Lorem, ipsum dolor.</div>
           <div>Lorem, ipsum dolor.</div>
         </div>
-        <div class="gridImg" id="inventario">
-          <div>
-            <img
-              src="https://c.static-nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/qhkqa20avfhumxwky4rq/air-jordan-1-high-travis-scott-release-date.jpg"
-              alt="Jordan Retro 1 High x Travis Scott">
-            <h5> Jordan Retro 1 High x Travis Scott</h5>
-            <p>U$D 1719</p>
-            <p>Stock : 2</p>
+
+        <div class="picture-grid" id="inventario">
+          <div class="grid-box"><a href="zapas/crocs.html"> <img
+                src="https://stockx.imgix.net/Crocs-Classic-Clog-Bad-Bunny.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1601108612&w=1000" />
+          </div></a>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Force-1-Low-Off-White-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&dpr=2&trim=color&updated_at=1538080256" />
           </div>
-          <div>
-            <img
-              src="https://stockx.imgix.net/Air-Jordan-1-Mid-Black-Hot-Punch-W-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1555964916&w=1000"
-              alt="">
-            <h5>Jordan 1 Mid Black Hot Punch</h5>
-            <p>U$D 450</p>
-            <p>Stock : 3</p>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Max-95-Denham.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600156051&w=1000" />
           </div>
-          <div>
-            <img
-              src="https://http2.mlstatic.com/zapatilla-nike-air-force-1-mujer-pinkorangeblack-D_NQ_NP_855792-MLC43219171479_082020-F.webp"
-              alt="">
-            <h5>Nike Air Force 1</h5>
-            <p>U$D 386</p>
-            <p>Stock : 1</p>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Rubber-Dunk-Off-White-UNC.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1601017093&w=1000" />
           </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Force-1-Flyleather-Ruohan-Wang.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600063851&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Rubber-Dunk-Off-White-Green-Strike.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1601083380&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Reebok-DMX-Trail-Hydrex-Ximonlee.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1601490740&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Dark-Mocha.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960962&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/adidas-Dame-7-Toy-Story-Buzz-Lightyear-GS.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600880569&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/adidas-Superstar-Swarovski-White-Black.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1597904268&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Max-90-Reverse-Duck-Camo-2020.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1584067533&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Max-90-Laser-Blue-2020.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1595519158&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/adidas-Torsion-Artillery-High-Kid-Cudi.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1601546269&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Max-ZM950-Black-Purple-Pink-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1601490739&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/adidas-Superstar-Swarovski-White-Black.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1597904268&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Max-90-Reverse-Duck-Camo-2020.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1584067533&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Max-90-Laser-Blue-2020.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1595519158&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/adidas-Torsion-Artillery-High-Kid-Cudi.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1601546269&w=1000" />
+          </div>
+          <div class="grid-box"><img
+              src="https://stockx.imgix.net/Nike-Air-Max-ZM950-Black-Purple-Pink-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1601490739&w=1000" />
+          </div>
+          <style>
+            #inventario {
+              margin-top: 0;
+            }
+          </style>
         </div>
       </div>
     </div>
@@ -92,9 +143,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
- 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="adminfunctions.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="adminfunctions.js"></script>
 </body>
 
 </html>

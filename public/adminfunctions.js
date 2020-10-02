@@ -8,8 +8,8 @@ function toggleView(){
   var ordenes = $('#ordenes');
   $('#btn_inventario').click(function (e) { 
     e.preventDefault();
-    inventario.toggle(1000);
-    ordenes.toggle(1000);
+    inventario.toggle(500);
+    ordenes.toggle(500);
   });
 }
 
@@ -18,7 +18,7 @@ function verOrdenes(){
   var ordenes = $('#ordenes');
   $('#btn_ordenes').click(function (e) { 
     e.preventDefault();
-    inventario.toggle(1000);
-    ordenes.toggle(1000);
+    inventario.toggle(500);
+    ordenes.toggle(500);
   });
 }
