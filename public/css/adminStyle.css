@@ -9,16 +9,53 @@
     background: lightseagreen;
     display : grid;
     grid-template-columns: 90% 10%;
+
 }
 body{
-    background:grey;
-    background-size: cover;
-    background-attachment: fixed;
+    background:white;
+    padding-top: 1em;
 }
 .navbar button{
-    background: lightseagreen;
+    background: orange;
+    color: white;
 }
 
 .navbar div{
     color: whitesmoke;
 }
+
+.container{
+    display: grid;
+}
+
+.gridOrdenes{
+    display:none;
+}
+
+.container .contenido{
+    display: grid;
+    background: rgb(94, 207, 170);
+    padding: 1em;
+    gap : 1em;
+}
+
+.gridCont{
+    display: grid;
+    grid-template-rows: auto;
+    border : 2px solid grey;
+    gap : 2em;
+}
+
+.gridCont div{
+    background: lightblue;
+    padding: 1em;
+    border: grey solid 1px;
+}
+
+.contenido .actionButtons{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+
