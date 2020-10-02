@@ -28,6 +28,7 @@ body{
 
 .gridOrdenes{
     display:none;
+    color:black;
 }
 
 .container .contenido{
@@ -46,7 +47,7 @@ body{
 }
 
 .gridCont div{
-    background: white;
+    background:white;
     padding: 1em;
     
 }
