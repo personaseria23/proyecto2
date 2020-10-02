@@ -4,10 +4,12 @@
 }
 body{
 color: white;
-font-family: georgia, times,serif;
+font-family: 'Open Sans', sans-serif;
+font-weight: 400;
 font-size: 1.2 rem;
 line-height: 1.6 rem;
-margin: 0;
+overflow-x: hidden;
+margin-top:3cm;
 }
 p {
     margin-bottom: 1.6 rem;
@@ -15,15 +17,15 @@ p {
 }
 /* HEADER */
 
-.header {
-    position:absolute; 
-    z-index:1;
+.header {   
+    z-index:1000000;
     background: rgb(220, 220, 220);
     padding: 0 0;
     position: fixed;
     left:0;
     top: 0;
     right: 0;
+
 }
 .logo{
     font-family: 'Questrial', sans-serif;
