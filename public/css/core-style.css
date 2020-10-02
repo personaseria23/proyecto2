@@ -45,8 +45,6 @@
 ------------------- */
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
     overflow-x: hidden;
     margin-top:3cm;
 }
@@ -583,7 +581,6 @@ img {
 .catagories-side-menu {
     background-color: #fff;
     width: 300px;
-    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
