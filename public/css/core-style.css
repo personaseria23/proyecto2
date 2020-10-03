@@ -61,6 +61,12 @@ h6 {
     font-weight: 700;
 }
 
+.title a{
+    color: #3a3a3a;
+    text-decoration: none;
+
+}
+
 p {
     color: #3a3a3a;
     font-size: 1em;
