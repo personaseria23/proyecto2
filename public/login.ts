@@ -85,7 +85,7 @@ function goto(view: string) {
 //ve si existe 'user' en objArray[]. si no existe lo inserta
 function validarUser(user: Usuario) {
   for (let i = 0; i < objArray.length; i++){
-    console.log(objArray[i]);
+    //console.log(objArray[i]);
     if (objArray[i].nombre === user.nombre && objArray[i].email === user.email)
       break;
   }
@@ -94,9 +94,10 @@ function validarUser(user: Usuario) {
 //Valida el login de un usuario. lo busca en objArray[], si lo encuentra comprueba si es Admin y redirecciona a la vista
 //Si no se encuentra el usuario Refresca la página mandando un aviso de inexistencia.
 function validarLogin(email: string, passwd: string) {
+  //console.log(email,passwd); 
   for (let i = 0; i < objArray.length; i++){
     if (objArray[i].email === email && objArray[i].password === passwd) {
-      if (isAdmin(buscarUser(email,passwd))) {
+      if (isAdmin(buscarUser(email, passwd))) {
         goto('adminview');
         return;
       } else {
@@ -107,7 +108,7 @@ function validarLogin(email: string, passwd: string) {
   }
   
   alert('El usuario no existe!');
-  goto('inicio');
+  
 }
 
 //Busca un usuario en ObjArray. Retorna el Obj o un Obj inicializado en null.

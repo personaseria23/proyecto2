@@ -3,44 +3,64 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title></title> 
+    <title></title> 
+        
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/tienda.css">
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
-	<link rel="stylesheet" href="css/estilos.css">
-	
+    <link rel="shortcut icon" href="https://p1.hiclipart.com/preview/156/337/317/nike-jordan-logo-sneakers-shoe-footwear-dsquared2-printed-sneakers-converse-dsquared2-sneakers-icon-uomo-air-jordan-png-clipart.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    
 </head>  
 <body>
- <form class="formulario">
-    
-    <h1>Registrate</h1>
-    <div class="contenedor">   
-    <div class="input-contenedor">
-        <i class="fas fa-user icon"></i>
-        <input id="nombre" type="text" placeholder="Nombre Completo">         
-    </div>
-    <div class="input-contenedor">
-        <i class="fas fa-envelope icon"></i>
-        <input id="email" type="text" placeholder="Correo Electronico">         
-    </div>
-    <div class="input-contenedor">
-        <i class="fas fa-key icon"></i>
-        <input id="passwd" type="password" placeholder="Contraseña">
-    </div>
-    <script>
-        function sub(){
-            nombre = document.getElementById("nombre").value;
-            email = document.getElementById("email").value;
-            passwd = document.getElementById("passwd").value;
-            capturaDatos(nombre,email,passwd);
-    
-        };
-    </script>
-    
-    <input type="button" value="Registrate" class="button" onclick="sub()">
-    <!--button type="button" onclick="mostrarCuentas()">VER CUENTAS</button-->
-    <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-    <p>¿Ya tienes una cuenta?<a class="link" href="inicio.html"> Iniciar Sesion</a></p>
+    <header class="header">
+        <div class="container logo-nav-container" id="barranav">           
+            <a href="tienda2.html" class="logo">C&T</a>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Hombre</a></li>
+                    <li><a href="#">Mujer</a></li>
+                    <li><a href="#">Niño</a></li>
+                </ul>
+            </nav>
+        
+        </div>
+    </header>
+    <form class="formulario">  
+        <h1>Registrate</h1>
+        <div class="contenedor">   
+        <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <input id="nombre" type="text" placeholder="Nombre Completo">         
+        </div>
+        <div class="input-contenedor">
+            <i class="fas fa-envelope icon"></i>
+            <input id="email" type="text" placeholder="Correo Electronico">         
+        </div>
+        <div class="input-contenedor">
+            <i class="fas fa-key icon"></i>
+            <input id="passwd" type="password" placeholder="Contraseña">
+        </div>
+        <script>
+            function sub(){
+                nombre = document.getElementById("nombre").value;
+                email = document.getElementById("email").value;
+                passwd = document.getElementById("passwd").value;
+                capturaDatos(nombre,email,passwd);
+        
+            };  
+        </script>
+        
+        <input type="button" value="Registrate" class="button" onclick="sub()">
+        <!--button type="button" onclick="mostrarCuentas()">VER CUENTAS</button-->
+        <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+        <p>¿Ya tienes una cuenta?<a class="link" href="tienda2.html"> Iniciar Sesion</a></p>
     </form>
     <script type="text/javascript" src="login.js"></script>
 </body>

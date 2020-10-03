@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-
+    <script>  
+        function capturaLogin(){
+                let email = document.getElementById('email').value;
+                let passwd = document.getElementById('passwd').value;
+                mostrarCuentas();
+                console.log(email,passwd);         
+                validarLogin(email,passwd);         
+            };
+    </script>
 <head>
     <title>CASH&TRADES</title>
-    <link rel="shortcut icon" href="https://p1.hiclipart.com/preview/156/337/317/nike-jordan-logo-sneakers-shoe-footwear-dsquared2-printed-sneakers-converse-dsquared2-sneakers-icon-uomo-air-jordan-png-clipart.jpg">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/tienda.css">
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
@@ -16,8 +24,8 @@
 <body>
 
     <header class="header">
-        <div class="container logo-nav-container">           
-            <a href="#" class="logo">C&T</a>
+        <div class="container logo-nav-container" id="colorLogo">           
+            <a href="tienda2.html" class="logo">C&T</a>
             <nav class="navigation">
                 <ul>
                     <li><a id="lnkLogin">Iniciar Sesion</a></li>
@@ -37,11 +45,14 @@
                   
                 <form action="">
                     <div class="contenedor-inputs">
-                        <input type="text" placeholder="Correo Electronico">
-                        <input type="password" placeholder="Contraseña">
+                        <i class="fas fa-envelope icon"></i>
+                        <input type="text" placeholder="Correo Electronico" id="email">
+                        <i class="fas fa-key icon"></i>
+                        <input type="password" placeholder="Contraseña" id="passwd">
                     </div>
-                    <input type="submit" class="btn-submit" value="Iniciar Sesión">
-                </form>    
+                    <input type="button" class="btn-submit" value="Iniciar Sesión" onclick="capturaLogin()">
+                </form>  
+                <p>¿No tienes una cuenta? <a class="link" href="registro.html">Registrate </a></p>
             </div>
         </div>
     </header>
@@ -76,6 +87,8 @@
             <p>Todos los derechos reservados.</p>
         </footer> 
        <script src="popup.js"></script> 
+       <script type="text/javascript" src="login.js"></script>
+       
 </body>
 
 </html>
